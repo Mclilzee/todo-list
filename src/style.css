@@ -1,0 +1,45 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-color: white;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 80px 80px;
+  height: fit-content;
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 30px 0;
+  padding: 20px 0;
+}
+
+.itemTitle {
+  cursor: pointer;
+}
+
+h3 {
+  margin: 0;
+}
+
+.priority-1 {
+  color: red;
+}
+
+.priority-2 {
+  color: rgb(255, 166, 0);
+}
+
+.priority-3 {
+  color: rgb(124, 219, 86);
+}
