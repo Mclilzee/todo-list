@@ -90,6 +90,7 @@ function defaultView(includeButtons, isComplete) {
   const titleLabel = document.createElement("label");
   titleLabel.textContent = "Title:";
   const titleInput = document.createElement("input");
+  titleInput.autocomplete = "off";
   titleInput.type = "text";
   titleInput.name = "titleInput";
   titleInput.id = "titleInput";
@@ -97,6 +98,7 @@ function defaultView(includeButtons, isComplete) {
   const textAreaLable = document.createElement("label");
   textAreaLable.textContent = "Description:";
   const textArea = document.createElement("textarea");
+  textArea.autocomplete = "off";
   textArea.id = "textAreaInput";
   textArea.name = "textArea";
   textArea.rows = 20;
