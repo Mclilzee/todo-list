@@ -43,3 +43,28 @@ h3 {
 .priority-3 {
   color: rgb(124, 219, 86);
 }
+
+#addTodoItem {
+  width: 100px;
+}
+
+#newTodoForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+}
+
+#titleInput {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+#textAreaInput {
+  margin-bottom: 20px;
+}
+
+#dateInput {
+  margin-bottom: 20px;
+}
