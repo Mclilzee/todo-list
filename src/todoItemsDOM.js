@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import { filledForm } from "./form.js";
 const dateFormatter = "p PP";
 
-const items = [];
+let items = [];
 
 function createTodoItem(title, description, dueDate) {
   items.push(new Todo(title, description, dueDate));
@@ -55,10 +55,11 @@ function populateDOM() {
 
     item.appendChild(itemTitle);
     item.appendChild(itemDate);
-
     list.appendChild(item);
   }
 
+  const itemsJSON = JSON.stringify(items);
+  localStorage.setItem("items", itemsJSON);
   document.body.appendChild(list);
 }
 
