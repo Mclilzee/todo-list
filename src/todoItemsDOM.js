@@ -41,7 +41,7 @@ function populateDOM() {
     itemTitle.id = i;
     itemTitle.classList.add("itemTitle");
 
-    itemEventListener(itemTitle, todoItem);
+    itemEventListener(itemTitle, todoItem, i);
 
     const itemDate = document.createElement("h3");
     itemDate.textContent = format(todoItem.dueDate, dateFormatter);
@@ -88,9 +88,9 @@ function dateEventListener(element, todoItem) {
   );
 }
 
-function itemEventListener(element, todoItem) {
+function itemEventListener(element, todoItem, id) {
   element.addEventListener("click", (e) => {
-    filledForm(todoItem);
+    filledForm(todoItem, id);
   });
 }
 

@@ -11,6 +11,14 @@ newForm(addTodoButton);
 
 document.body.appendChild(addTodoButton);
 
-createTodoItem("Yes", "nice", startOfTomorrow());
-createTodoItem("IJ", "noooman", startOfToday());
-createTodoItem("IJ", "noooman", new Date(endOfWeek(2)));
+createTodoItem(
+  "Click me for Information",
+  "Create new Todo Items with 'New Todo' button, delete items and change their values by clicking on them. change date by clicking on the date",
+  startOfTomorrow()
+);
+createTodoItem(
+  "Color depends on due Date",
+  "Red for today, orange for Tommorow, green for after Tommorow, and grey means time is due",
+  startOfToday()
+);
+createTodoItem("Go Swimming", "very Old", new Date(endOfWeek(2)));

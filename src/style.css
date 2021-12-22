@@ -91,15 +91,28 @@ h3 {
   font-weight: bolder;
 }
 
-#completeButton {
+.acitvityButton {
   background-color: #afbbc1;
   border-radius: 10px;
   border: 1px solid darkgray;
   color: rgb(255, 255, 255);
   margin-bottom: 20px;
+  font-weight: bold;
+  padding: 6px;
+  cursor: pointer;
 }
 
 .complete {
   text-decoration-line: line-through;
   text-decoration-thickness: 3px;
+}
+
+.deleteButton {
+  align-self: flex-start;
+  margin: 0 20px;
+  background-color: #02171e;
+}
+
+.buttonHover {
+  background-color: royalblue;
 }

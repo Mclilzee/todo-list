@@ -2,6 +2,7 @@ import {
   changeInformation,
   createTodoItem,
   toggleComplete,
+  removeTodoItem
 } from "./todoItemsDOM";
 import { format } from "date-fns";
 
@@ -27,7 +28,7 @@ function newForm(element) {
   });
 }
 
-function filledForm(todoItem) {
+function filledForm(todoItem, index) {
   const isComplete = todoItem.complete;
 
   const form = defaultView(true, isComplete);
@@ -36,11 +37,17 @@ function filledForm(todoItem) {
   form.textArea.value = todoItem.description;
   form.datePicker.value = format(todoItem.dueDate, "yyyy-MM-dd'T'HH:mm");
   form.submitButton.value = "Apply Changes";
-  console.log(format(todoItem.dueDate, "yyyy-MM-dd'T'HH:mm"));
+  buttonStyle(form.completeButton);
+  buttonStyle(form.deleteButton);
 
   form.completeButton.addEventListener("click", () => {
     toggleComplete(todoItem);
   });
+
+  form.deleteButton.addEventListener("click", () => {
+    removeTodoItem(index);
+  });
+
   document.body.appendChild(form);
 
   form.addEventListener("submit", (e) => {
@@ -58,7 +65,7 @@ function filledForm(todoItem) {
   });
 }
 
-function defaultView(completeButton, isComplete) {
+function defaultView(includeButtons, isComplete) {
   const form = document.createElement("form");
   form.id = "newTodoForm";
   const formCloseButton = document.createElement("input");
@@ -68,14 +75,14 @@ function defaultView(completeButton, isComplete) {
   formCloseButton.id = "formCloseButton";
   form.appendChild(formCloseButton);
 
-  if (completeButton) {
+  if (includeButtons) {
     const completeButton = document.createElement("button");
-    completeButton.id = "completeButton";
+    completeButton.classList.add("acitvityButton");
     completeButton.name = "completeButton";
     if (isComplete) {
-      completeButton.textContent = "Uncomplete";
+      completeButton.textContent = "Set Active";
     } else {
-      completeButton.textContent = "Complete";
+      completeButton.textContent = "Set Complete";
     }
 
     form.appendChild(completeButton);
@@ -112,7 +119,26 @@ function defaultView(completeButton, isComplete) {
   form.appendChild(textArea);
   form.appendChild(datePicker);
   form.appendChild(submitButton);
+
+  if (includeButtons) {
+    const deleteButton = document.createElement("button");
+    deleteButton.name = "deleteButton";
+    deleteButton.textContent = "Delete Activity";
+    deleteButton.classList.add("acitvityButton");
+    deleteButton.classList.add("deleteButton");
+    form.appendChild(deleteButton);
+  }
   return form;
+}
+
+function buttonStyle(button) {
+  button.addEventListener("mouseover", () => {
+    button.classList.toggle("buttonHover");
+  });
+
+  button.addEventListener("mouseout", () => {
+    button.classList.toggle("buttonHover");
+  });
 }
 
 export { newForm, filledForm };
