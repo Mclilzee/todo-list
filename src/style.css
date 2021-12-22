@@ -44,6 +44,10 @@ h3 {
   color: rgb(124, 219, 86);
 }
 
+.priority-4 {
+  color: rgba(128, 128, 128, 0.603);
+}
+
 #addTodoItem {
   width: 100px;
 }
@@ -53,7 +57,14 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position:fixed;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  padding-bottom: 20px;
 }
 
 #titleInput {
@@ -62,9 +73,33 @@ h3 {
 }
 
 #textAreaInput {
+  margin: 0 20px;
   margin-bottom: 20px;
 }
 
 #dateInput {
   margin-bottom: 20px;
+}
+
+#formCloseButton {
+  align-self: flex-end;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: whitesmoke;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+#completeButton {
+  background-color: #afbbc1;
+  border-radius: 10px;
+  border: 1px solid darkgray;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+}
+
+.complete {
+  text-decoration-line: line-through;
+  text-decoration-thickness: 3px;
 }

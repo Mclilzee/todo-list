@@ -1,4 +1,4 @@
-import { isToday, isTomorrow } from "date-fns";
+import { isPast, isToday, isTomorrow } from "date-fns";
 
 class Todo {
   constructor(title, description, dueDate) {
@@ -7,14 +7,27 @@ class Todo {
     this.dueDate = dueDate;
     this.complete = false;
     this.id;
+    this.priority = this.getPriority(dueDate);
+  }
 
+  editValues(title, description, dueDate) {
+    this.title = title;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.priority = this.getPriority(dueDate);
+  }
+
+  getPriority(dueDate) {
+    let value = 4;
     if (isToday(dueDate)) {
-      this.priority = 1;
+      value = 1;
     } else if (isTomorrow(dueDate)) {
-      this.priority = 2;
-    } else {
-      this.priority = 3;
+      value = 2;
+    } else if (!isPast(dueDate)) {
+      value = 3;
     }
+
+    return value;
   }
 }
 
