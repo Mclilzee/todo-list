@@ -116,6 +116,7 @@ function defaultView(includeButtons, isComplete) {
   datePicker.name = "datePicker";
   datePicker.type = "datetime-local";
   datePicker.required = true;
+  datePicker.max = "9999-12-31T23:59";
 
   const submitButton = document.createElement("input");
   submitButton.name = "submitButton";
