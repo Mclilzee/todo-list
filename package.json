@@ -21,10 +21,16 @@
   "homepage": "https://github.com/Mclilzee/todo-list#readme",
   "devDependencies": {
     "css-loader": "^6.5.1",
-    "date-fns": "^2.27.0",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.3",
     "style-loader": "^3.3.1",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.0"
+  },
+  "dependencies": {
+    "date-fns": "^2.27.0"
   }
 }

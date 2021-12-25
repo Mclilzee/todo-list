@@ -4,9 +4,13 @@ html {
   background-color: grey;
   display: flex;
   justify-content: center;
+  background-image: url("./time.jpg");
+  background-size: cover;
 }
 
 body {
+  border-radius: 10%;
+  margin-top: 2%;
   background-color: white;
   width: 800px;
   display: flex;
@@ -49,7 +53,16 @@ h3 {
 }
 
 #addTodoItem {
-  width: 100px;
+  width: 15%;
+  height: 30px;
+  font-weight: bolder;
+  border: solid thin #b3acac;
+  font-size: 0.8em;
+  border-radius: 5%;
+}
+
+#addTodoItem:hover {
+  background-color: #c4dfa0;
 }
 
 #newTodoForm {
@@ -67,9 +80,20 @@ h3 {
   padding-bottom: 20px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #titleInput {
   width: 200px;
   margin-bottom: 20px;
+}
+
+#titleInput:invalid {
+  border: solid thin red;
 }
 
 #textAreaInput {
@@ -79,6 +103,10 @@ h3 {
 
 #dateInput {
   margin-bottom: 20px;
+}
+
+#dateInput:invalid {
+  border: solid thin red;
 }
 
 #formCloseButton {
@@ -113,6 +141,6 @@ h3 {
   background-color: #02171e;
 }
 
-.buttonHover {
+button:hover {
   background-color: royalblue;
 }
