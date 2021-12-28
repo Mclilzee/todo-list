@@ -6,6 +6,8 @@ html {
   justify-content: center;
   background-image: url("./time.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body {
