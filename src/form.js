@@ -8,12 +8,14 @@ import { format } from "date-fns";
 
 function newForm(element) {
   element.addEventListener("click", () => {
+    element.style.pointerEvents = "none";
     const formContainer = defaultView();
     const formChildren = formContainer.childNodes;
     const form = formChildren[1];
 
     formChildren[0].addEventListener("click", () => {
       document.body.removeChild(formContainer);
+      element.style.pointerEvents = "auto";
     });
 
     document.body.appendChild(formContainer);
@@ -27,6 +29,7 @@ function newForm(element) {
       createTodoItem(title, description, new Date(date));
 
       document.body.removeChild(formContainer);
+      element.style.pointerEvents = "auto";
     });
   });
 }
@@ -43,20 +46,23 @@ function filledForm(todoItem, index) {
   form.datePicker.value = format(todoItem.dueDate, "yyyy-MM-dd'T'HH:mm");
   form.submitButton.value = "Apply Changes";
 
-  console.log(formContainer);
-
   formChildren[0].addEventListener("click", () => {
     document.body.removeChild(formContainer);
+    document.getElementById("addTodoItem").style.pointerEvents = "auto";
   });
 
   formChildren[1].addEventListener("click", () => {
     toggleComplete(todoItem);
     document.body.removeChild(formContainer);
+    document.getElementById("addTodoItem").style.pointerEvents = "auto";
+
   });
 
   formChildren[3].addEventListener("click", () => {
     removeTodoItem(index);
     document.body.removeChild(formContainer);
+    document.getElementById("addTodoItem").style.pointerEvents = "auto";
+
   });
 
   document.body.appendChild(formContainer);
@@ -70,6 +76,7 @@ function filledForm(todoItem, index) {
 
     changeInformation(todoItem, title, description, new Date(date));
     document.body.removeChild(formContainer);
+    document.getElementById("addTodoItem").style.pointerEvents = "auto";
   });
 }
 

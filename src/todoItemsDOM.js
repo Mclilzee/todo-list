@@ -92,6 +92,7 @@ function dateEventListener(element, todoItem) {
 function itemEventListener(element, todoItem, id) {
   element.addEventListener("click", (e) => {
     filledForm(todoItem, id);
+    document.getElementById("addTodoItem").style.pointerEvents = "none";
   });
 }
 
